@@ -5,7 +5,7 @@ export default function Nodes(props) {
 
   return (
     <div>
-      {Object.keys(nodes).map(
+      {nodes.map(
         node => 
           <button 
             onClick={() => selectNode(node)} 

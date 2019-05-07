@@ -24,16 +24,16 @@ export default class Routes extends Component {
 
   render() {
     const { routes } = this.state
-
+    const nodes = Object.keys(routes)
     return (
       <div>
         <Nodes
-          nodes={routes}
+          nodes={nodes}
           selectNode={this.handleSelectStart}
         />
         {/* <FastestRoute /> */}
         <Nodes
-          nodes={routes}
+          nodes={nodes}
           selectNode={this.handleSelectTarget}
         />
       </div>
