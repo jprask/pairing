@@ -5,6 +5,7 @@
   --color-white: rgba(238, 229, 233, 1);
   --color-yellow: rgba(239, 200, 139, 1);
   --font-size-medium: 40px;
+  --font-size-large: 80px;
 }
 
 body {
