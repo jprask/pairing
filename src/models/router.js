@@ -1,4 +1,4 @@
-import { newPath, goTo } from './'
+import { newPath, goTo } from '.'
 
 const fetchRoutes = callback => {
   fetch('http://localhost:3001/routes')

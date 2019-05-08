@@ -1,2 +1,2 @@
 export * from './path'
-export * from './route'
+export * from './router'
