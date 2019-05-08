@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Path from './Path'
 import Nodes from './Nodes'
+import { RouterContainer } from './RouterContainer'
 import { fetchRoutes, findShortestPath } from '../models'
 
 export default class Router extends Component {
@@ -27,7 +28,7 @@ export default class Router extends Component {
     const nodes = Object.keys(routes)
 
     return (
-      <div>
+      <RouterContainer>
         <Nodes
           nodes={nodes}
           selectNode={this.handleSelectOrigin}
@@ -39,7 +40,7 @@ export default class Router extends Component {
           nodes={nodes}
           selectNode={this.handleSelectTarget}
         />
-      </div>
+      </RouterContainer>
     )
   }
 }
