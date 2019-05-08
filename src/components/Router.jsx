@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-// import FastestRoute from './FastestRoute'
+import Path from './Path'
 import Nodes from './Nodes'
-import { fetchRoutes } from '../models'
+import { fetchRoutes, findShortestPath } from '../models'
 
-export default class Routes extends Component {
+export default class Router extends Component {
   state = {
     routes: {},
-    routeStart: "",
+    routeOrigin: "",
     routeTarget: ""
   }
 
@@ -14,8 +14,8 @@ export default class Routes extends Component {
     fetchRoutes(data => this.setState({routes: data}))
   }
 
-  handleSelectStart = value => {
-    this.setState({routeStart: value})
+  handleSelectOrigin = value => {
+    this.setState({routeOrigin: value})
   }
 
   handleSelectTarget = value => {
@@ -23,15 +23,18 @@ export default class Routes extends Component {
   }
 
   render() {
-    const { routes } = this.state
+    const { routes, routeOrigin, routeTarget } = this.state
     const nodes = Object.keys(routes)
+
     return (
       <div>
         <Nodes
           nodes={nodes}
-          selectNode={this.handleSelectStart}
+          selectNode={this.handleSelectOrigin}
         />
-        {/* <FastestRoute /> */}
+        {!!routeOrigin && !!routeTarget &&
+          <Path path={findShortestPath(routes, routeOrigin, routeTarget)} />
+        }
         <Nodes
           nodes={nodes}
           selectNode={this.handleSelectTarget}
