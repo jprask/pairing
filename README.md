@@ -1,3 +1,5 @@
+## Problema
+
 Precisamos construir um webservice capaz de calcular a rota mais curta para um serviço de entregas.
 O serviço será primeiramente carregado com mapas de distâncias, por exemplo:
  
@@ -39,4 +41,12 @@ Precisamos de:
   - custo total do trajeto
 FRONTEND
 
-Dado o webservice acima, suponha que somente o cadastro de mapas está pronto, e que há um endpoint servindo o mapa completo. Construa uma calculadora capaz de calcular rotas em tempo real! Os mapas precisarão ser consultados num determinado webservice (recomendo usar http://www.mock-server.com/).
+Dado o webservice acima, suponha que somente o cadastro de mapas está pronto, e que há um endpoint servindo o mapa completo. Construa uma calculadora capaz de calcular rotas em tempo real! Os mapas precisarão ser consultados num determinado webservice.
+
+## Scripts
+
+```yarn start ```
+  - Roda o server mock e o app
+
+```yarn test ```
+  - Roda os testes
