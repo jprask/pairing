@@ -18,6 +18,7 @@
 }
 
 .path--node::after {
+  /* font-family: "Comic Sans MS", cursive, sans-serif; */
   content: "~>";
   padding-left: 10px;
   display: inline-block;

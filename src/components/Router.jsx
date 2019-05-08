@@ -35,7 +35,7 @@ export default class Router extends Component {
           activeNode={routeOrigin}
         />
         {!!routeOrigin && !!routeTarget &&
-          <Path path={findShortestPath(routes, routeOrigin, routeTarget)} />
+          <Path path={findShortestPath(routes, routeOrigin, routeTarget) || undefined} />
         }
         <Nodes
           nodes={nodes}
