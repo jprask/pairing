@@ -7,14 +7,23 @@ const Path = props => {
   return (
     <div className="path-container">
       {nodes && 
-        <div className="path">
+        <div className="path" data-testid="path">
           {nodes.map(
-            node => <div className="path--node" key={node}>{node}</div>
+            node => 
+              <div 
+                className="path--node" 
+                data-testid={node}
+                key={node}
+                children={node}
+              />
           )}
         </div>
       }
       <div className="path--cost">
-        <h1>{Number.isInteger(cost) ? `Cost: ${cost}` : 'No path!'}</h1>
+        <h1 
+          data-testid="cost"
+          children={Number.isInteger(cost) ? `Cost: ${cost}` : 'No path!'}
+        />
       </div>
     </div>
   )
