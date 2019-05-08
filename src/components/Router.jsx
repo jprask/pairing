@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import Path from './Path'
-import Nodes from './Nodes'
+import { Path } from './Path'
+import { Nodes } from './Nodes/Nodes'
+import { RouterContainer } from './RouterContainer'
 import { fetchRoutes, findShortestPath } from '../models'
 
 export default class Router extends Component {
@@ -27,10 +28,11 @@ export default class Router extends Component {
     const nodes = Object.keys(routes)
 
     return (
-      <div>
+      <RouterContainer>
         <Nodes
           nodes={nodes}
           selectNode={this.handleSelectOrigin}
+          activeNode={routeOrigin}
         />
         {!!routeOrigin && !!routeTarget &&
           <Path path={findShortestPath(routes, routeOrigin, routeTarget)} />
@@ -38,8 +40,9 @@ export default class Router extends Component {
         <Nodes
           nodes={nodes}
           selectNode={this.handleSelectTarget}
+          activeNode={routeTarget}
         />
-      </div>
+      </RouterContainer>
     )
   }
 }

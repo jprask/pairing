@@ -1,0 +1,37 @@
+.path-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.path {
+  overflow: hidden;
+  border: 5px solid var(--color-orange);
+}
+
+.path--node {
+  padding: 24px;
+  display: inline-block;
+  font-size: var(--font-size-large);
+}
+
+.path--node::after {
+  content: "~>";
+  padding-left: 10px;
+  display: inline-block;
+  color: var(--color-orange);
+}
+
+.path--node:last-child {
+  padding-left: 0px;
+}
+
+.path--node:first-child {
+  padding-left: 20px;
+}
+
+.path--node:last-child::after {
+  display: none;
+}
