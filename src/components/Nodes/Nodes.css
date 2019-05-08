@@ -1,0 +1,28 @@
+.nodes-container {
+  height: 100%;
+  width: 120px;
+  display: flex;
+  padding: 0px 20px;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.node {
+  padding: 20px;
+  text-align: center;
+  border-radius: 50%;
+  color: var(--color-white);
+  background-color: var(--color-bg);
+  font-size: var(--font-size-medium);
+  border: 5px solid var(--color-orange);
+}
+
+.node--active {
+  padding: 20px;
+  text-align: center;
+  border-radius: 50%;
+  color: var(--color-black);
+  font-size: var(--font-size-medium);
+  background-color: var(--color-orange);
+  border: 5px solid var(--color-black);
+}
