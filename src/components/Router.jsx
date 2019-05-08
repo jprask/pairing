@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Path } from './Path'
-import { Nodes } from './Nodes/Nodes'
+import { Nodes } from './Nodes'
 import { RouterContainer } from './RouterContainer'
 import { fetchRoutes, findShortestPath } from '../models'
 
