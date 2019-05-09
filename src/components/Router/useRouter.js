@@ -1,28 +1,38 @@
-import { useState, useEffect, useMemo } from 'react'
-import { fetchRoutes, findShortestPath } from '../../models'
+import { useEffect, useCallback } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
+import { selectOrigin, selectTarget, fetchMap } from '../../reducers/actions'
 
 const useRouter = () => {
-  const [map, setMap] = useState({})
-  const [routeOrigin, selectOrigin] = useState('')
-  const [routeTarget, selectTarget] = useState('')
+  const routerState = useSelector(state => ({
+    nodes: Object.keys(state.map),
+    routeOrigin: state.routeOrigin,
+    routeTarget: state.routeTarget,
+    shortestPath: state.path
+  }))
+  const dispatch = useDispatch()
 
-  useEffect(() => { fetchRoutes(setMap) }, [])
+  useEffect(() => {
+    dispatch(fetchMap())
+  }, [dispatch])
 
-  const shortestPath = useMemo(
-    () => findShortestPath(map, routeOrigin, routeTarget),
-    [map, routeOrigin, routeTarget]
+  const selectOriginCallback = useCallback(
+    node => {
+      dispatch(selectOrigin(node))
+    },
+    [dispatch],
   )
 
-  const nodes = useMemo(() => Object.keys(map), [map])
+  const selectTargetCallback = useCallback(
+    node => {
+      dispatch(selectTarget(node))
+    },
+    [dispatch],
+  )
 
   return {
-    map,
-    nodes,
-    routeOrigin,
-    routeTarget,
-    selectOrigin,
-    selectTarget,
-    shortestPath
+    ...routerState,
+    selectOrigin: selectOriginCallback,
+    selectTarget: selectTargetCallback,
   }
 }
 
