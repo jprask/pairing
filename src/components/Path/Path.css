@@ -12,25 +12,20 @@
 }
 
 .path--node {
-  padding: 24px;
+  padding: 24px 24px 24px 0px;
   display: inline-block;
   font-size: var(--font-size-large);
 }
 
 .path--node::after {
-  /* font-family: "Comic Sans MS", cursive, sans-serif; */
-  content: "~>";
-  padding-left: 10px;
+  content: "⇝";
+  padding-left: 24px;
   display: inline-block;
   color: var(--color-orange);
 }
 
-.path--node:last-child {
-  padding-left: 0px;
-}
-
 .path--node:first-child {
-  padding-left: 20px;
+  padding-left: 24px;
 }
 
 .path--node:last-child::after {
