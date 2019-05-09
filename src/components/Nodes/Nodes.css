@@ -20,6 +20,7 @@
 
 .node--active {
   padding: 5%;
+  width: 80%;
   text-align: center;
   border-radius: 50%;
   color: var(--color-black);

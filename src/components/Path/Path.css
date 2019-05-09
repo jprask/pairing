@@ -1,6 +1,4 @@
-
-src/components/Path/Path.css
-src/components/Path/Path.jsx .path-container {
+.path-container {
   height: 100%;
   display: flex;
   flex-direction: column;
