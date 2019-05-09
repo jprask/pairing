@@ -30,6 +30,7 @@
     ]
   },
   "devDependencies": {
+    "json-server": "^0.14.2",
     "react-testing-library": "^7.0.0"
   }
 }
